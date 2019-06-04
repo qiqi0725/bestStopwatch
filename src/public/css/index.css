@@ -46,8 +46,11 @@ body {
 }
 
 #resume:active,
+#resume:hover,
 #lap:active,
-#reset:active {
+#lap:hover,
+#reset:active,
+#reset:hover {
     background-color: #4f4f4f;
 }
 
@@ -55,7 +58,8 @@ body {
     background-color: #15b222;
 }
 
-#start:active {
+#start:active,
+#start:hover {
     background-color: #32b53d;
 }
 
@@ -63,7 +67,8 @@ body {
     background-color: #ff2d2d;
 }
 
-#stop:active {
+#stop:active,
+#stop:hover {
     background-color: #ff4747;
 }
 

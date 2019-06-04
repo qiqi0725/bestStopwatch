@@ -17,10 +17,10 @@
     </div>
     <!--Buttons component-->
     <div class="stopwatchButtons">
-        <button id="lap" onclick="manager.lapTime()">lap</button>
+        <button id="lap" onclick="manager.lapTime()" disabled>lap</button>
         <button id="start" onclick="manager.startTime()" style="display:block">start</button>
         <button id="reset" style="display:none">reset</button>
-        <button id="stop" style="display:none">stop</button>
+        <button id="stop" onclick="manager.stopTime()" style="display:none">stop</button>
         <button id="resume" style="display:none">resume</button>
     </div>
     <!--Laps component-->

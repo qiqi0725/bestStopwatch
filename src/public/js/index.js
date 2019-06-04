@@ -3,7 +3,7 @@ class ButtonManager {
         this.timeContent = document.getElementById('time');
         this.lapContent = document.getElementById('laps');
         this.startButton = document.getElementById('start');
-        this.endButton = document.getElementById('end');
+        this.resumeButton = document.getElementById('resume');
         this.resetButton = document.getElementById('reset');
         this.stopButton = document.getElementById('stop');
         this.lapButton = document.getElementById('lap');
@@ -14,18 +14,18 @@ class ButtonManager {
         this.secondClick = false;
     }
 
-    pad(num){
+    pad(num) {
         return num > 10 ? num : '0' + num;
     }
 
-    hide(button){
+    hide(button) {
         button.style.display = 'none';
     }
 
-    show(button){
+    show(button) {
         button.style.display = 'block';
     }
-    
+
     startTime() {
         let seconds = 0.0;
         let minutes = 0.0;
@@ -34,6 +34,7 @@ class ButtonManager {
         this.hide(this.startButton);
         this.show(this.stopButton);
         this.show(this.lapButton);
+        this.lapButton.disabled = false;
 
         this.timer = window.setInterval(() => {
             this.time += 0.01;
@@ -52,6 +53,11 @@ class ButtonManager {
 
     stopTime() {
         window.clearInterval(this.timer);
+
+        this.hide(this.stopButton);
+        this.show(this.resetButton);
+        this.hide(this.lapButton);
+        this.show(this.resumeButton);
     }
 
     resetTime() {
