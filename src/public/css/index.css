@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f1011;
+    color: white;
+}
+
+
+/*  TIME  */
+
+.time {}
+
+
+/*  BUTTONS  */
+
+.stopwatchButtons>* {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+}
+
+#start {
+    background-color: #16c925;
+}
+
+#stop {
+    background-color: #ff2d2d;
+}
+
+
+/*  LAPS DISPLAY  */
