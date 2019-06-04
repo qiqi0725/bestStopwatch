@@ -12,6 +12,9 @@ class ButtonManager {
         this.lapTimer = null;
         this.lapCounter = 1;
         this.secondClick = false;
+        this.seconds = 0.0;
+        this.minutes = 0.0;
+        this.hours = 0.0;
     }
 
     pad(num) {
@@ -27,9 +30,9 @@ class ButtonManager {
     }
 
     startTime() {
-        let seconds = 0.0;
-        let minutes = 0.0;
-        let hours = 0.0;
+        // let seconds = 0.0;
+        // let minutes = 0.0;
+        // let hours = 0.0;
 
         this.hide(this.startButton);
         this.show(this.stopButton);
@@ -38,17 +41,25 @@ class ButtonManager {
 
         this.timer = window.setInterval(() => {
             this.time += 0.01;
-            seconds += 0.01;
-            if (seconds >= 60.0) {
-                minutes++;
-                seconds = 0.0;
+            this.seconds += 0.01;
+            if (this.seconds >= 60.0) {
+                this.minutes++;
+                this.seconds = 0.0;
             }
-            if (minutes >= 60.0) {
-                hours++;
-                minutes = 0.0;
+            if (this.minutes >= 60.0) {
+                this.hours++;
+                this.minutes = 0.0;
             }
-            this.timeContent.innerHTML = `${this.pad(hours)}:${this.pad(minutes)}:${this.pad(seconds.toFixed(2))}`;
+            this.timeContent.innerHTML = `${this.pad(this.hours)}:${this.pad(this.minutes)}:${this.pad(this.seconds.toFixed(2))}`;
         }, 1);
+    }
+
+    resumeTime() {
+        this.hide(this.resumeButton);
+        this.hide(this.resetButton);
+
+        this.startTime();
+
     }
 
     stopTime() {
@@ -62,6 +73,17 @@ class ButtonManager {
 
     resetTime() {
         this.time = 0.0;
+        this.seconds = 0.0;
+        this.minutes = 0.0;
+        this.hours = 0.0;
+
+        this.hide(this.resetButton);
+        this.show(this.lapButton);
+        this.hide(this.resumeButton);
+        this.show(this.startButton);
+
+        this.timeContent.innerHTML = '00:00.00';
+
     }
 
     lapTime() {

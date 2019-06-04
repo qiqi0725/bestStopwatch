@@ -19,9 +19,9 @@
     <div class="stopwatchButtons">
         <button id="lap" onclick="manager.lapTime()" disabled>lap</button>
         <button id="start" onclick="manager.startTime()" style="display:block">start</button>
-        <button id="reset" style="display:none">reset</button>
+        <button id="reset" onclick="manager.resetTime()" style="display:none">reset</button>
         <button id="stop" onclick="manager.stopTime()" style="display:none">stop</button>
-        <button id="resume" style="display:none">resume</button>
+        <button id="resume" onclick="manager.resumeTime()" style="display:none">resume</button>
     </div>
     <!--Laps component-->
     <div id="laps">
