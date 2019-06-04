@@ -71,6 +71,7 @@ body {
 /*  LAPS DISPLAY  */
 
 .laps {
+    color: white;
     padding: 2em;
     font-size: 3vh;
     width: 60vw;
