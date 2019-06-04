@@ -14,7 +14,7 @@ body {
 
 /*  TIME  */
 
-.time {
+#time {
     display: flex;
     font-size: 10vw;
     width: 100vw;
