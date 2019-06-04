@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="icon" href="../assets/favicon.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,14 +13,15 @@
 <body>
     <!--Time component-->
     <div id="time">
+        00:00:00.00
     </div>
     <!--Buttons component-->
     <div class="stopwatchButtons">
-        <button id="start" onclick="startTime()">start</button>
-        <button id="reset" style="display:none">reset</button>
-        <button id="stop" onclick="stopTime()" style="display:none">stop</button>
         <button id="lap" onclick="lapTime()" disabled>lap</button>
-        <button id="resume" style="display:none">resume</button>
+        <button id="start" onclick="startTime()" style="display:block">start</button>
+        <button id="reset" onclick="resetTime()" style="display:none">reset</button>
+        <button id="stop" onclick="stopTime()" style="display:none">stop</button>
+        <button id="resume" onclick="resumeTime()" style="display:none">resume</button>
     </div>
     <!--Laps component-->
     <div id="laps">
