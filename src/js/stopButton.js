@@ -7,9 +7,13 @@ class StopButton extends Button {
 
     // Stop the timer
     // Doesn't reset (separate button)
+    // Hide Lap, show Resume
     buttonAction(intervalID) {
         console.log("This is a Stop button.");
         clearInterval(intervalID);
+        var hide = document.getElementById("lap");
+        var show = document.getElementById("resume");
+        switchButton(hide, show);
     }
 
 }
