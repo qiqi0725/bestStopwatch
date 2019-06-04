@@ -2,31 +2,29 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script src="js/stopwatchTime.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Stopwatch Adaptive</title>
 </head>
 
 
 <body>
     <!--Time component-->
-    <div class="time">
-        placeholder
+    <div id="time">
     </div>
     <!--Buttons component-->
     <div class="stopwatchButtons">
-        <button id="start">start</button>
-        <button id="reset">reset</button>
-        <button id="stop">stop</button>
-        <button id="lap">lap</button>
-        <button id="resume">resume</button>
+        <button id="start" onclick="manager.startTime()" style="display:block">start</button>
+        <button id="reset" style="display:none">reset</button>
+        <button id="stop" style="display:none">stop</button>
+        <button id="lap" style="display:none" onclick="manager.lapTime()">lap</button>
+        <button id="resume" style="display:none">resume</button>
     </div>
     <!--Laps component-->
-    <div class="laps">
-        placeholder
+    <div id="laps">
     </div>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
